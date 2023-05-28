@@ -20,6 +20,11 @@ class App extends React.Component {
 console.log(data)
   }
 
+deleteContact = contactId =>{
+this.setState(prevState =>({contacts:
+   prevState.contacts.filter(contact=> contact.id !==contactId),}));
+};
+
 
   render() {
 const {contacts} = this.state;
@@ -28,7 +33,8 @@ const {contacts} = this.state;
       <>
         <div>phone number</div>
 <FormPhone onSubmit={this.formSubmitHandler}  />
-<ContactList contacts={contacts} />
+
+<ContactList contacts={contacts} onDeleteContact= {this.deleteContact} />
 
         {/* <Phone />
 

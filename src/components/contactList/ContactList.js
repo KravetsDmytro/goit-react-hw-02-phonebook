@@ -1,11 +1,11 @@
 import React from 'react';
 import css from './/contactList.module.css';
+import shortid from 'shortid';
 
 const ContactList =({contacts, onDeleteContact})=>(
-
 <div className={css.contactCard}>
 <ul className={css.contact}>{ contacts.map(({id, name,number})=>(
-<li key={id} className={css.item} >
+<li key={id } className={css.item} >
 <p className={css.name}>{name}</p>
 <p className={css.number}>{number}</p>
 

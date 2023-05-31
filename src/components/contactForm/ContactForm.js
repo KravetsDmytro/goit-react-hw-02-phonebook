@@ -22,8 +22,12 @@ class ContactForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    const contact = {
+      name: this.state.name,
+      number: this.state.number,
+    };
 
-    this.props.onSubmit(this.state);
+    this.props.onSubmit(contact);
 
     this.resetForm();
   };
@@ -63,10 +67,10 @@ class ContactForm extends Component {
             name="number"
             value={this.state.number}
             onChange={this.handleChange}
+            required
           />
  <div className={css.button__wrapper}>
           <button className={css.button} type="submit">
-            {' '}
             Add contact
           </button>
           </div>

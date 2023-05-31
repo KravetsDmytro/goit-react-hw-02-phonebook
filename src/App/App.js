@@ -23,7 +23,7 @@ class App extends React.Component {
 
   // Додаємо контакт
   addContact = newContact => {
-    // Перевіряємо контакт на дублікат
+    // методперевірки  контакта чи не повторюється.
     const duplicateName = this.state.contacts.find(
       contact => contact.name === newContact.name
     );
@@ -38,7 +38,7 @@ class App extends React.Component {
     }));
   };
 
-  // Слідкуємо за полем фільтрації та записуємо у стейт
+  // фільтр та  записуємо у стейт
   changeFilter = event => {
     this.setState({ filter: event.currentTarget.value });
   };
@@ -46,7 +46,6 @@ class App extends React.Component {
   // Фільтруємо та повертаємо результат фільтру
   filterContacts = () => {
     const { contacts, filter } = this.state;
-
     const normalizedFilter = filter.toLowerCase();
 
     return contacts.filter(contact =>
@@ -59,7 +58,7 @@ class App extends React.Component {
 // console.log(data)
 //   };
 
-
+// видаленя контакту
 deleteContact = contactId =>{
 this.setState(prevState =>({contacts:
    prevState.contacts.filter(contact => contact.id !==contactId),}));
@@ -70,10 +69,6 @@ this.setState(prevState =>({contacts:
 const {contacts} = this.state;
 const { filter } = this.state;
 const filteredResults = this.filterContacts();
-
-// const completedContact = contacts.reduce((total, contact)=>(
-//   contact.completed ? total + 1 : total), 0,
-//   );
 
     return (
       <div className={css.container} >

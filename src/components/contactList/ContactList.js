@@ -1,6 +1,5 @@
 import React from 'react';
 import css from './/contactList.module.css';
-import shortid from 'shortid';
 
 const ContactList =({contacts, onDeleteContact})=>(
 <div className={css.contactCard}>

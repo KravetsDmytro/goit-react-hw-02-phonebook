@@ -18,13 +18,6 @@ const ContactList =({contacts, onDeleteContact})=>(
 
 
 
-// class TodoList extends React.Component {
-
-// render(){
-// return(<div>  hellou</div>)
-
-// }
-// }
 
 
 
